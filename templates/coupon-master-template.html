@@ -7,13 +7,34 @@
 
     <style>
         #usableArea-DinA4 {
-            height: 237mm;
-            width: 170mm;
+            //height: 237mm;
+            //width: 170mm;
+            width: 237mm;
+            //height: 170mm;
             border-color: #000000;
-            border-style: solid;
-            border-width: 1mm;
-            margin: auto;
+            border-style: dashed;
+            border-width: 1px;
+            margin: 0px;
             page-break-after:always;
+        }
+        #the_voucher {
+            width: 237mm;
+            //height: 380px;
+            height: 99mm;
+            
+            background-size: cover;
+        }
+        .the_code {
+                position: absolute;
+    top: 82mm;
+    right: 34mm;
+    text-align: center;
+        }
+
+        .the_farmer {
+position: absolute;
+    top: 73mm;
+    right: 25mm;
         }
     </style>
 
@@ -21,15 +42,18 @@
 <body style="text-align: center">
   {{#each items}}
     <div id="usableArea-DinA4">
-        <h1>Get your free konfetti</h1>
 
-        <div>
-            <img style="width: 160mm; height: 180mm;" src="https://pixabay.com/static/uploads/photo/2014/04/03/00/42/party-309155_960_720.png">
+
+        <div id="the_voucher" style="background:url('http://folk.company/wp-content/uploads/2016/11/FolkriceVoucher_Final-{{type}}.jpg');">
+
+            <span class="the_farmer">{{farmer}}</span>
+            <span class="the_code">{{code}}</span>
         </div>
 
-        <div style="padding-top: 10mm; font-size: 30px;">
-            Enter the code <span style="font-weight: bolder">{{code}}</span> into the konfetti app.
-        </div>
+<!--         <div style="padding-top: 10mm; font-size: 30px;">
+            Enter the code <span style="font-weight: bolder">{{code}}</span> into folkrice.com/farmer-for-change
+        </div> -->
+
     </div>
     {{/each}}
 </body>

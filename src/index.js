@@ -31,10 +31,11 @@ server.get('/generate', function (req, res) {
     // for code coupon printing
     if ((typeof req.query.codes != "undefined") && (req.query.codes!="undefined")) {
         var codes = req.query.codes.split(",");
-        for (var i=0; i<codes.length; i++) {
-            var code = codes[i];
-            request.payload.data.items.push({code:code});
-        }
+
+        //for (var i=0; i<codes.length; i++) {
+            //var code = codes[i];
+            request.payload.data.items.push({code:codes[0],farmer:codes[1],type:req.query.type});
+        //}
     } else
 
     // for general PDF generation (item array per parameter)
